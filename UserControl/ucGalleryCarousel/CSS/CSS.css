@@ -1,0 +1,104 @@
+#gallery #main {
+	background: transparent url('../Images/carousel_shadow.png') no-repeat center bottom;
+	position:relative;
+	text-align:center;	
+}
+#gallery #images, #gallery #thumbs {
+	overflow: hidden;
+}
+#gallery #images {
+	margin:0 auto;
+	position:absolute;
+	left:16px;
+	top:0;
+}		
+	#gallery #images .slide {
+		position:relative;
+		float:left;
+	}			
+	#gallery #images .slide a {
+		display:block;
+		position:absolute;
+		top:0;
+		left:0;
+		background: transparent url('../Images/carousel_glare.png') no-repeat 0 0;
+		text-indent:-999em;	
+		border-radius:5px;	
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;	
+	}
+	#gallery #images .slide img {
+		border-radius:5px;					
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;					
+	}
+
+/* styling for the thumbnail carousel */	
+#gallery #thumbs {
+	height:40px;
+	margin:10px 0 0 73px;
+}
+	#gallery #thumbs .thumb {
+		width:72px;
+		height:40px;
+		float: left;
+		position:relative;
+		margin:0 30px 0 0;
+	}	
+	#gallery #thumbs .thumb img {
+		border-radius:5px;				
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;										
+	}
+	#gallery #thumbs .thumb a {
+		display:block;
+		position:absolute;
+		top:0;
+		left:0;
+		background: transparent url('../Images/carousel_glare_small.png') no-repeat 0 0;
+		width: 70px;
+		height:36px;	
+		border:2px solid #ddd;
+		text-indent:-999em;
+		border-radius:5px;						
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;						
+	}	
+	#gallery #thumbs .thumb a.selected, #gallery #thumbs .thumb a:hover {
+		border:2px solid #aaa;
+	}	
+				
+/* styling for previous and next button */			
+#gallery #prev, #gallery #next {
+	text-indent:-999em;
+	position: absolute;
+	display:block;
+	width:19px;
+	height:20px;
+	background: transparent url('../Images/carousel_nav.png') no-repeat 0 0;
+	bottom:20px;
+}
+	/* Set the position according to the sprite */
+	#gallery #prev {
+		background-position: 0 0;
+		left: 25px;
+	}
+	#gallery #next {
+		background-position: -19px 0;
+		right: 25px;
+	}			
+	#gallery #prev:hover { 
+		background-position: 0 -20px;				
+	}
+	#gallery #next:hover {
+		background-position: -19px -20px;				
+	}
+	#gallery #prev.disabled, #gallery #next.disabled {
+		display: none !important;
+	}
+	.caroufredsel_wrapper{
+		float: none; position: absolute; top: 0px; right: auto; bottom: auto; left: 16px;  margin: 0px; overflow: hidden;
+	}
+	.caroufredsel_wrapper2{
+		float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; margin: 10px 0px 0px 73px; overflow: hidden;
+	}

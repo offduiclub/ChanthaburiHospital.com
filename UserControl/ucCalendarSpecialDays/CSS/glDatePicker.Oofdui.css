@@ -1,0 +1,134 @@
+.gldp-Oofdui {
+	/*position: absolute;*/
+	font-family: 'helvetica';
+	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.25);
+	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.25);
+	box-shadow:0 1px 2px rgba(0,0,0,0.25);
+}
+
+/* Core style for every cell */
+.gldp-Oofdui .core {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: relative;
+	float: left;
+	padding: 0;
+	margin: 0;
+	font-size: 10pt;
+	text-align: center;
+	cursor: pointer;
+	color: #222;
+	background: #ffffff;
+}
+
+/* Cell border */
+.gldp-Oofdui .border {
+	border-style: solid;
+	border-width: 0;
+	border-color: #fff;
+}
+
+/* Month/Year text and select */
+.gldp-Oofdui .monyear,
+.gldp-Oofdui .monyear select {
+	font-size: 11pt !important;
+	font-weight: bold;
+	background: #E6E6E6;
+}
+
+/* Month/Year text */
+.gldp-Oofdui .monyear span {
+	margin: 0 5px 0 5px;
+}
+
+/* Prev/Next arrows */
+.gldp-Oofdui .prev-arrow,
+.gldp-Oofdui .next-arrow {
+	color: #666;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.gldp-Oofdui .prev-arrow:active,
+.gldp-Oofdui .next-arrow:active {
+	color: #000;
+}
+
+.gldp-Oofdui .prev-arrow-off,
+.gldp-Oofdui .next-arrow-off {
+	color: #000;
+	opacity: 0.15;
+}
+
+/* Days of the week */
+.gldp-Oofdui .dow {
+	color: #222;
+	font-weight: bold;
+	cursor:pointer !important;
+	background: #F1F1F1;
+	font-size:9pt;
+}
+
+/* Weekdays */
+.gldp-Oofdui .mon,
+.gldp-Oofdui .tue,
+.gldp-Oofdui .wed,
+.gldp-Oofdui .thu,
+.gldp-Oofdui .fri {
+	font-weight: normal;
+}
+
+/* Weekend days */
+.gldp-Oofdui .sat,
+.gldp-Oofdui .sun {
+	color: #888;
+	font-weight: normal;
+}
+
+/* Selectable days that are outside of current month being shown */
+.gldp-Oofdui .outday {
+	color: #aaa !important;
+}
+
+/* Hover */
+.gldp-Oofdui .mon:hover,
+.gldp-Oofdui .tue:hover,
+.gldp-Oofdui .wed:hover,
+.gldp-Oofdui .thu:hover,
+.gldp-Oofdui .fri:hover,
+.gldp-Oofdui .sat:hover,
+.gldp-Oofdui .sun:hover {
+	background: #eee;
+}
+
+/* Non-Selectable days */
+.gldp-Oofdui .noday {
+	color: #bbb;
+	font-weight: normal;
+	cursor: wait !important;
+	background: #ddd;
+}
+
+/* Currently selected day */
+.gldp-Oofdui .selected {
+	color: #fff;
+	font-weight: bold;
+	border-color: #888;
+	background: #aaa;
+}
+
+/* Today */
+.gldp-Oofdui .today {
+	color: #fff;
+	font-weight: bold;
+	border-color: #000;
+	background: #222;
+}
+
+/* Special */
+.gldp-Oofdui .special {
+	color: #fff;
+	font-weight: bold;
+	border-color: #DDD;
+	background: #00C5E8;
+}

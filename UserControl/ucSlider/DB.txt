@@ -1,0 +1,12 @@
+﻿CREATE TABLE `Slider` (
+  `UID` int(4) NOT NULL,
+  `Photo` varchar(100) NOT NULL,
+  `Name` varchar(200) default NULL,
+  `CUser` varchar(100) NOT NULL,
+  `CWhen` datetime NOT NULL,
+  `MUser` varchar(100) default NULL,
+  `MWhen` datetime default NULL,
+  `Sort` int(4) NOT NULL,
+  `Active` char(1) default NULL,
+  PRIMARY KEY  (`UID`)
+)

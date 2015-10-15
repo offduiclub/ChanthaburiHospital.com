@@ -1,0 +1,339 @@
+/*
+---------------------------------------------------------------
+  Note that styles you apply to the main menu items are inherited by the sub menus items too.
+  If you'd like to avoid this, you could use child selectors (not supported by IE6) - for example:
+  .sm-default > li > a { ... } instead of .sm-default a { ... }
+---------------------------------------------------------------*/
+
+
+/* Menu box
+===================*/
+	.sm-default 
+	{
+		padding:0 6px;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		color:#777;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		border-radius:4px;
+		background:#0072B8; /*สีพื้นของแถบเมนู*/
+		text-align:left;
+	}
+	.sm-default-vertical {
+		/*border-right:2px solid #86DBE0;*/
+		border-bottom:0;
+	}
+	.sm-default ul {
+		padding:8px 0; /*ระยะห่างบนล่าง ในเมนู DropDown*/
+		background:#FFF;
+		-moz-border-radius:0 4px 4px 4px;
+		-webkit-border-radius:0 4px 4px 4px;
+		border-radius:0 4px 4px 4px;
+		-moz-box-shadow:0 4px 3px rgba(0,0,0,0.25);
+		-webkit-box-shadow:0 4px 3px rgba(0,0,0,0.25);
+		box-shadow:0 4px 3px rgba(0,0,0,0.25);
+	}
+	.sm-default-vertical ul,
+	.sm-default ul ul {
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		border-radius:4px;
+	}
+
+
+/* Menu items
+===================*/
+	.sm-default a {
+		border-bottom:0px solid #fff;
+		padding:15px 20px 15px 20px;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		color:#777;
+		font-size:14px;
+		line-height:17px;
+		text-decoration:none;
+		/*
+		-moz-border-radius:4px 4px 0 0;
+		-webkit-border-radius:4px 4px 0 0;
+		border-radius:4px 4px 0 0;
+		*/
+	}
+	.sm-default a:hover, .sm-default a:focus, .sm-default a:active,.sm-default a.current,.sm-default a.actived {
+		background:#0072B8;
+		/*background:#E7E7E7;*/
+		color:#FFF;
+	}
+	.sm-default a.highlighted {
+		border-bottom-color:#FFF !important;
+		background:#FFF;/*พื้นหลังเมนูที่มีเมนูย่อย เมื่อเม้าท์วาง*/
+		color:#373838;
+		-moz-box-shadow:0 4px 3px rgba(0,0,0,0.25);
+		-webkit-box-shadow:0 4px 3px rgba(0,0,0,0.25);
+		box-shadow:0 4px 3px rgba(0,0,0,0.25);
+	}
+	.sm-default-vertical a {
+		-moz-border-radius:4px 0 0 4px;
+		-webkit-border-radius:4px 0 0 4px;
+		border-radius:4px 0 0 4px;
+	}
+	.sm-default-vertical a:hover, .sm-default-vertical a:focus, .sm-default-vertical a:active,
+	.sm-default-vertical a.highlighted {
+		border-bottom-color:#86DBE0 !important;
+		background:#86DBE0;
+		color:#FFF;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+	}
+	.sm-default ul a 
+	{
+		padding:10px 20px;
+		font-size:14px;
+		line-height:normal;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		border-radius:0;
+	}
+	.sm-default ul a:hover, .sm-default ul a:focus, .sm-default ul a:active,
+	.sm-default ul a.highlighted {
+		/*background:#86DBE0;*//*สีไฮไลค์ในเมนูย่อยที่มีเมนูย่อยอีกชั้น (DropDown)*/
+		color:#FFF;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+	}
+	.sm-default a.current, .sm-default a.current:hover, .sm-default a.current:focus, .sm-default a.current:active {
+		border-bottom-color:#86DBE0;
+	}
+	.sm-default-vertical a.current, .sm-default-vertical a.current:hover, .sm-default-vertical a.current:focus, .sm-default-vertical a.current:active {
+		border-right:2px solid #86DBE0;
+		border-bottom-color:#fff;
+	}
+	.sm-default ul a.current, .sm-default ul a.current:hover,.sm-default ul a.actived, .sm-default ul a.actived:hover, .sm-default ul a.current:focus, .sm-default ul a.current:active {
+		border-right:0;
+		border-bottom:0;
+		background:#86DBE0;/*สีไฮไลค์ในเมนูย่อยที่ Active อยู่*/
+		color:#FFF;
+	}
+	.sm-default ul a.disabled, .sm-default ul a.disabled:hover {
+		border-right:0;
+		border-bottom:0;
+		background:#F2F2F2;/*สีไฮไลค์ในเมนูย่อยที่ Active อยู่*/
+		color:#FFF;
+		cursor:not-allowed;
+	}
+	.sm-default a.has-submenu {
+		padding-right:32px;/*ระยะห่างเมนูกับลูกศร*/
+	}
+
+
+/* Sub menu indicators
+===================*/
+
+	.sm-default a span.sub-arrow {
+		position:absolute;
+		right:17px;
+		top:50%;
+		margin-top:-3px;
+		/* we will use one-side border to create a triangle so that we don't use a real background image, of course, you can use a real image if you like too */
+		width:0;
+		height:0;
+		overflow:hidden;
+		border-top:6px solid #777; /* ลูกศร */
+		border-left:4px dashed transparent;
+		border-right:4px dashed transparent;
+	}
+	.sm-default a:hover span.sub-arrow, .sm-default a:focus span.sub-arrow, .sm-default a:active span.sub-arrow {
+		border-top-color:#FFF;
+	}
+	.sm-default a.highlighted span.sub-arrow {
+		border-top-color:#777;
+	}
+	.sm-default-vertical a span.sub-arrow,
+ 	.sm-default ul a span.sub-arrow {
+		right:15px;
+		margin-top:-4px;
+		border-left:6px solid #777; /*ลูกศร*/
+		border-top:4px dashed transparent;
+		border-bottom:4px dashed transparent;
+	}
+	.sm-default-vertical a:hover span.sub-arrow, .sm-default-vertical a:focus span.sub-arrow, .sm-default-vertical a:active span.sub-arrow,
+	.sm-default-vertical a.highlighted span.sub-arrow,
+ 	.sm-default ul a:hover span.sub-arrow, .sm-default ul a:focus span.sub-arrow, .sm-default ul a:active span.sub-arrow,
+ 	.sm-default ul a.highlighted span.sub-arrow {
+		border-left-color:#FFF;
+		border-top-color:transparent;
+	}
+
+
+/* Scrolling arrows containers for tall sub menus - test sub menu: "Sub test" -> "more..." in the default download package
+===================*/
+
+	.sm-default span.scroll-up, .sm-default span.scroll-down {
+		position:absolute;
+		display:none;
+		visibility:hidden;
+		overflow:hidden;
+		background:#FFF;
+		height:20px;
+		/* width and position will be automatically set by the script */
+	}
+	.sm-default span.scroll-up-arrow, .sm-default span.scroll-down-arrow {
+		position:absolute;
+		top:6px;
+		left:50%;
+		margin-left:-8px;
+		/* we will use one-side border to create a triangle so that we don't use a real background image, of course, you can use a real image if you like too */
+		width:0;
+		height:0;
+		overflow:hidden;
+		border-bottom:8px solid #777; /* tweak size of the arrow */
+		border-left:6px dashed transparent;
+		border-right:6px dashed transparent;
+	}
+	.sm-default span.scroll-down-arrow {
+		border-top:8px solid #777; /* tweak size of the arrow */
+		border-bottom:0;
+	}
+
+
+/*
+---------------------------------------------------------------
+  Responsiveness
+  These will make the sub menus collapsible when the screen width is too small.
+---------------------------------------------------------------*/
+
+
+/* decrease horizontal main menu items left/right padding to avoid wrapping */
+@media screen and (max-width: 850px) {
+	.sm-default:not(.sm-default-vertical) > li > a {
+		padding-left:12px;
+		padding-right:12px;
+	}
+	.sm-default:not(.sm-default-vertical) > li > a.has-submenu {
+		padding-right:24px;
+	}
+	.sm-default:not(.sm-default-vertical) a span.sub-arrow {
+		right:9px;
+	}
+}
+@media screen and (max-width: 720px) {
+	.sm-default:not(.sm-default-vertical) > li > a {
+		padding-left:6px;
+		padding-right:6px;
+	}
+	.sm-default:not(.sm-default-vertical) > li > a.has-submenu {
+		padding-right:18px;
+	}
+	.sm-default:not(.sm-default-vertical) a span.sub-arrow {
+		right:3px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+
+	/* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
+	ul.sm-default{width:auto !important;}
+	ul.sm-default ul{display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:auto !important;min-width:0 !important;max-width:none !important;}
+	ul.sm-default>li{float:none;}
+	ul.sm-default>li>a,ul.sm-default ul.sm-nowrap>li>a{white-space:normal;}
+	ul.sm-default iframe{display:none;}
+
+	/* Uncomment this rule to disable completely the sub menus for small screen devices */
+	/*.sm-default ul, .sm-default span.sub-arrow, .sm-default iframe {
+		display:none !important;
+	}*/
+
+
+/* Menu box
+===================*/
+
+	.sm-default 
+	{
+	    /*
+		border-top:2px solid #86DBE0;
+		border-bottom:2px solid #86DBE0;
+        */
+        border-top:2px solid #ddd;
+		border-bottom:2px solid #ddd;
+		border-right:0;
+	}
+	.sm-default ul {
+		border:0;
+		padding:0;
+		/* darken the background of the sub menus */
+		background:rgba(141,184,99,0.2);
+		-moz-border-radius:0 !important;
+		-webkit-border-radius:0 !important;
+		border-radius:0 !important;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+	}
+
+
+/* Menu items
+===================*/
+
+	.sm-default a {
+		border:0 !important;
+		padding:13px 23px !important;
+		background:transparent !important;
+		color:#000 !important;
+		-moz-border-radius:0 !important;
+		-webkit-border-radius:0 !important;
+		border-radius:0 !important;
+		-moz-box-shadow:none !important;
+		-webkit-box-shadow:none !important;
+		box-shadow:none !important;
+	}
+	.sm-default a.current {
+		font-weight:normal;
+	}
+	/* add some text indentation for the 2+ level sub menu items */
+	.sm-default ul a {
+		border-left:8px solid transparent !important;
+	}
+	.sm-default ul ul a {
+		border-left:16px solid transparent !important;
+	}
+	.sm-default ul ul ul a {
+		border-left:24px solid transparent !important;
+	}
+	.sm-default ul ul ul ul a {
+		border-left:32px solid transparent !important;
+	}
+	.sm-default ul ul ul ul ul a {
+		border-left:40px solid transparent !important;
+	}
+
+
+/* Sub menu indicators
+===================*/
+
+	.sm-default a span.sub-arrow {
+		right:auto !important;
+		margin-top:-7px !important;
+		margin-left:-16px !important;
+		border-left:9px solid #777 !important; /* tweak size of the arrow */
+		border-top:6px dashed transparent !important;
+		border-bottom:6px dashed transparent !important;
+	}
+	/* Hide sub indicator when item is expanded - we enable the item link when it's expanded */
+	.sm-default a.highlighted span.sub-arrow {
+		display:none !important;
+	}
+
+
+
+
+/* Items separators
+===================*/
+
+	.sm-default li {
+		border-top:1px solid rgba(141,184,99,0.2);
+	}
+	.sm-default li:first-child {
+		border-top:0;
+	}
+
+}

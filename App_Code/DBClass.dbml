@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BRHDB" Class="DBClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.121.10.29;Initial Catalog=BRHDB;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BRHDBConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Language" Member="Languages">
+    <Type Name="Language">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Icon" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Detail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Content" Member="Contents">
+    <Type Name="Content">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Detail" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Content" Member="Content1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Event" Member="Events">
+    <Type Name="Event">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PicThumbnail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PicFull" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DepartmentUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActiveDateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActiveDateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetailSub" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Article" Member="Articles">
+    <Type Name="Article">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PicThumbnail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PicFull" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ActiveDateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActiveDateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NumberLike" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberDislike" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SampleSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DetailSub" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NumberView" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderPackage" Member="OrderPackages">
+    <Type Name="OrderPackage">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CustomerUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GrandTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="StatusFlage" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderPackageDetail" Member="OrderPackageDetails">
+    <Type Name="OrderPackageDetail">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderPackageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SEX" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prefecture" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zipcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserGroupUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Authority" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="AddressDistrict" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AddressPrefecture" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AddressProvince" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AddressPostal" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Profile" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Signature" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Package" Member="Packages">
+    <Type Name="Package">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PackageName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DetailSub" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PicThumbnail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PicFull" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ActiveDateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActiveDateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PackageCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DepartmentUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Promotion" Member="Promotions">
+    <Type Name="Promotion">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PromotionName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DetailSub" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PicThumbnail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PicFull" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ActiveDateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActiveDateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DepartmentUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MedicalCenter" Member="MedicalCenters">
+    <Type Name="MedicalCenter">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalCenterGroupUID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Detail" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Content" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="OfficeHours" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News" Member="News">
+    <Type Name="New">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ActiveDateFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActiveDateTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MWhen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusFlag" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="LanguageUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MetaKeywords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PicThumbnail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PicFull" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DetailSub" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
