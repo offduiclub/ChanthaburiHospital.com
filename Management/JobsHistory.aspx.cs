@@ -28,13 +28,36 @@ public partial class Management_JobsHistory : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            BindDefault();
-            if (Request.QueryString["id"] != null)
+            if (Request.QueryString["id"] != null && Request.QueryString["command"] != null)
             {
+                if (Request.QueryString["command"].ToString() == "delete")
+                {
+                    if (clsSQL.Execute(
+                        "UPDATE [JobsHistory] SET StatusFlag='D' WHERE UID=@UID;",
+                        new string[,] { { "@UID", Request.QueryString["id"].ToString() } },
+                        dbType,
+                        cs))
+                    {
+                        //ucColorBox1.Redirect("/Management/DoctorAppointment.aspx");
+                        Response.Redirect("JobsHistory.aspx");
+                    }
+                    else
+                    {
+                        ucColorBox1.Alert("เกิดข้อผิดพลาดขณะลบข้อมูล");
+                    }
+                }
+            }
+            else if (Request.QueryString["id"] != null)
+            {
+                BindDefault();
                 ucColorBox1.IFrame(
-                    webManage+"?id=" + Request.QueryString["id"].ToString() + "&command=edit",
-                    "700px","95%",false
+                    webManage + "?id=" + Request.QueryString["id"].ToString() + "&command=edit",
+                    "700px", "95%", false
                 );
+            }
+            else
+            {
+                BindDefault();
             }
         }
     }
@@ -65,7 +88,8 @@ public partial class Management_JobsHistory : System.Web.UI.Page
         strSQL.Append(tableDefault + " ");
         strSQL.Append("INNER JOIN Jobs ON "+tableDefault+".JobsUID=Jobs.UID ");
         #region Where
-        //strSQL.Append("WHERE ");
+        strSQL.Append("WHERE ");
+        strSQL.Append("JobsHistory.StatusFlag<>'D' ");
         //strSQL.Append("MedicalCenterGroupUID=" + clsDefault.QueryStringChecker("group") + " ");
         #endregion
         strSQL.Append("ORDER BY ");

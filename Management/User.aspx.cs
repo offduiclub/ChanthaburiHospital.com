@@ -24,12 +24,28 @@ public partial class Management_User : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            BindDefault();
-
-            if (Request.QueryString["id"] != null)
+            if (Request.QueryString["id"] != null && Request.QueryString["command"] != null)
             {
-                //clsColorBox clsColorBox = new clsColorBox();
-                //clsColorBox.Show("/Management/UserManage.aspx?id=" + Request.QueryString["id"].ToString() + "&command=edit", iframe: true);
+                if (Request.QueryString["command"].ToString() == "delete")
+                {
+                    if (clsSQL.Execute(
+                        "UPDATE [User] SET Active='D' WHERE UID=@UID;",
+                        new string[,] { { "@UID", Request.QueryString["id"].ToString() } },
+                        dbType,
+                        cs))
+                    {
+                        //ucColorBox1.Redirect("/Management/DoctorAppointment.aspx");
+                        Response.Redirect("User.aspx");
+                    }
+                    else
+                    {
+                        ucColorBox1.Alert("เกิดข้อผิดพลาดขณะลบข้อมูล");
+                    }
+                }
+            }
+            else
+            {
+                BindDefault();
             }
         }
     }
@@ -58,6 +74,7 @@ public partial class Management_User : System.Web.UI.Page
         strSQL.Append("[User] ");
         strSQL.Append("INNER JOIN UserGroup ");
         strSQL.Append("ON [User].UserGroupUID=UserGroup.UID ");
+        strSQL.Append("WHERE [User].Active<>'D' ");
         strSQL.Append("ORDER BY UserGroup.Sort,[User].Sort");
         #endregion
 

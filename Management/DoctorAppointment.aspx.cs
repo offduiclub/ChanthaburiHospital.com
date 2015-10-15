@@ -27,7 +27,29 @@ public partial class Management_DoctorAppointment : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            BindDefault();
+            if (Request.QueryString["id"] != null && Request.QueryString["command"]!=null)
+            {
+                if (Request.QueryString["command"].ToString() == "delete")
+                {
+                    if(clsSQL.Execute(
+                        "DELETE FROM DoctorAppointment WHERE UID=@UID;",
+                        new string[,] { { "@UID", Request.QueryString["id"].ToString() } }, 
+                        dbType, 
+                        cs))
+                    {
+                        //ucColorBox1.Redirect("/Management/DoctorAppointment.aspx");
+                        Response.Redirect("DoctorAppointment.aspx");
+                    }
+                    else
+                    {
+                        ucColorBox1.Alert("เกิดข้อผิดพลาดขณะลบข้อมูล");
+                    }
+                }
+            }
+            else
+            { 
+                BindDefault();
+            }
         }
     }
 

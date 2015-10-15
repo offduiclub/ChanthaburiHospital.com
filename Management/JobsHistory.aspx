@@ -113,12 +113,7 @@
                             <a href="/Management/<%=webManage %>?id=<%#DataBinder.Eval(Container.DataItem,"UID") %>&command=edit" title="ดูข้อมูล" class="cbIFrame">
                                 <div class="Icon24 Search"></div>
                             </a>
-                            <!--
-				            <a onclick="return confirm('กดปุ่ม OK เพื่อยืนยันการลบข้อมูล')" 
-                                href="/Management/<%=webManage %>?id=<%#DataBinder.Eval(Container.DataItem,"UID") %>&command=delete" 
-                                class="Icon16 Delete" title="ลบข้อมูล">
-                            </a>
-                            -->
+                            <a onClick="return confirm('กดปุ่ม OK เพื่อยืนยันการลบข้อมูล')" href="/Management/JobsHistory.aspx?id=<%#DataBinder.Eval(Container.DataItem,"UID") %>&command=delete" class="Icon16 Delete" title="ลบข้อมูล"></a>
 			            </td>
                     </ItemTemplate>
                     <FooterTemplate>
