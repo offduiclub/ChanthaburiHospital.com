@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 
 public partial class Management_Default : System.Web.UI.Page
 {
+    #region GlobalVariable
+    public clsSecurity clsSecurity = new clsSecurity();
+    #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
         int? Test;

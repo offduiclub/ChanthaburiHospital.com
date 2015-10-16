@@ -25,6 +25,7 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
     private void MenuBuilder()
     {
         ucMenuMega.Item item = new ucMenuMega.Item();
+        clsSecurity clsSecurity = new clsSecurity();
 
         item = new ucMenuMega.Item();
         item.UID = 1;
@@ -40,7 +41,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "IntroPage Manage";
         item.Detail = "";
         item.URL = "IntroPage.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        { 
+            ucMenuMega1.Items.Add(item);
+        }
         /*
         item = new ucMenuMega.Item();
         item.UID = 11;
@@ -56,7 +60,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Content Manage";
         item.Detail = "";
         item.URL = "Content.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 13;
@@ -64,7 +71,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Medical Center Manage";
         item.Detail = "";
         item.URL = "MedicalCenterGroup.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 14;
@@ -72,7 +82,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Service Manage";
         item.Detail = "";
         item.URL = "ServiceGroup.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 15;
@@ -80,7 +93,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Slider Manage";
         item.Detail = "";
         item.URL = "Slider.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 26;
@@ -88,7 +104,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Highlight Manage";
         item.Detail = "";
         item.URL = "Highlight.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 16;
@@ -96,7 +115,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "E-Mail Template";
         item.Detail = "";
         item.URL = "EmailTemplate.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 17;
@@ -104,7 +126,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "E-Mail Manage";
         item.Detail = "";
         item.URL = "EmailList.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 2;
@@ -120,7 +145,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "User Manage";
         item.Detail = "";
         item.URL = "User.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 22;
@@ -128,7 +156,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Inquire Manage";
         item.Detail = "";
         item.URL = "Inquiry.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 23;
@@ -136,7 +167,10 @@ public partial class Management_MasterPage : System.Web.UI.MasterPage
         item.Name = "Doctor Appointment Manage";
         item.Detail = "";
         item.URL = "DoctorAppointment.aspx";
-        ucMenuMega1.Items.Add(item);
+        if (clsSecurity.LoginChecker("admin"))
+        {
+            ucMenuMega1.Items.Add(item);
+        }
 
         item = new ucMenuMega.Item();
         item.UID = 24;

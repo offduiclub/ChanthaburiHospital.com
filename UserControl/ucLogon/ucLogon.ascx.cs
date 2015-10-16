@@ -68,7 +68,7 @@ public partial class UserControl_ucLogon_ucLogon : System.Web.UI.UserControl
                     clsSecurity.LoginGroup+
                     "</div>";
             }
-            if (clsSecurity.GetAuthority(clsSecurity.LoginGroupAuthority, "Admin") == "1")
+            if (clsSecurity.GetAuthority(clsSecurity.LoginGroupAuthority, "Admin") == "1" || clsSecurity.GetAuthority(clsSecurity.LoginGroupAuthority, "HR") == "1")
             {
                 lblAuthority.Text = "<div style='padding-top:8px;padding-left:5px;'><a href='"+UrlManagement+"'><span class='Icon16 Config'/></a></div>";
             }
